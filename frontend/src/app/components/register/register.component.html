@@ -1,0 +1,42 @@
+<section class="form_container">
+  <h1>Registrar</h1>
+
+  <form>
+
+    <div class="form_control">
+      <label for="name">Nome</label>
+      <input type="text" name="name" id="name" placeholder="Digite o seu Nome"
+       multiple="true" [(ngModel)]="name">
+    </div>
+
+
+    <div class="form_control">
+      <label for="name">Telefone</label>
+      <input type="text" name="phone" id="phone" placeholder="Digite o seu Telefone"
+       multiple="true" [(ngModel)]="phone">
+    </div>
+
+    <div class="form_control">
+      <label for="name">E-mail</label>
+      <input type="email" name="email" id="email" placeholder="Digite o seu E-mail"
+       multiple="true" [(ngModel)]="email">
+    </div>
+
+    <div class="form_control">
+      <label for="name">Senha</label>
+      <input type="password" name="password" id="password" placeholder="Digite a sua senha"
+       multiple="true" [(ngModel)]="password">
+    </div>
+
+    <div class="form_control">
+      <label for="name">Confirmação de Senha</label>
+      <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirme a sua senha"
+       multiple="true" [(ngModel)]="confirmpassword">
+    </div>
+
+    <button (click)="register($event)">Cadastrar</button>
+
+  </form>
+
+  <p>Já tem conta? <a [routerLink]="['//login']" routerLinkActive="router-link-active" >Clique aqui</a></p>
+</section>
