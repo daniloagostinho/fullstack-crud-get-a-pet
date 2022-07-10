@@ -5,14 +5,23 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class StoreService {
-  formPayload = new BehaviorSubject<Object>({});
+  flashMessage = new BehaviorSubject<any>(null);
+  isAuthenticate  = new BehaviorSubject<any>(false)
   constructor() { }
 
-  setformPayload(data: any) {
-    this.formPayload.next({...data})
+  setflashMessage(message: any) {
+    this.flashMessage.next(message)
   }
 
-  getFormPayload() {
-    return this.formPayload.asObservable();
+  getflashMessage() {
+    return this.flashMessage.asObservable();
+  }
+
+  setIsAuthenticate(data: any) {
+    this.isAuthenticate.next(data)
+  }
+
+  getIsAuthenticate() {
+    return this.isAuthenticate.asObservable();
   }
 }

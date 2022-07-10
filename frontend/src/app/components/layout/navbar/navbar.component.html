@@ -5,7 +5,12 @@
   </div>
   <ul>
     <li routerLink="/">Adotar</li>
-    <li routerLink="/login">Entrar</li>
-    <li routerLink="/register">Cadastrar</li>
+    <div *ngIf="authenticate; else userLoggedOut">
+      <li (click)="logout()">Sair</li>
+    </div>
+    <ng-template #userLoggedOut>
+      <li routerLink="/login">Entrar</li>
+      <li routerLink="/register">Cadastrar</li>
+    </ng-template>
   </ul>
 </nav>

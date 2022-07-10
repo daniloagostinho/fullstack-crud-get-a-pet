@@ -1,6 +1,14 @@
 <section class="form_container">
   <h1>Registrar</h1>
 
+  <div class="message error" *ngIf="flashMessage">
+    {{flashMessage}}
+  </div>
+
+  <div class="message sucess" *ngIf="flashMessageSucess">
+    {{flashMessageSucess}}
+  </div>
+
   <form>
 
     <div class="form_control">
