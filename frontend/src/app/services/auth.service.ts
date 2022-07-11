@@ -19,6 +19,10 @@ export class AuthService {
   logout() {
     this.store.setIsAuthenticate(false)
     localStorage.removeItem('token')
-    this.router.navigate(['/'])
+    this.router.navigate(['/login'])
+  }
+
+  login(user: any) {
+    return this.http.post(`${environment.BASE_URL}users/login`, user)
   }
 }

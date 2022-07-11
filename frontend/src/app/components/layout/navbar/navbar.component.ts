@@ -13,12 +13,9 @@ export class NavbarComponent implements OnInit {
   constructor(private store: StoreService, private auth: AuthService) { }
 
   ngOnInit(): void {
-    let token  = localStorage.getItem('token');
-    if(token) {
-      this.store.getIsAuthenticate().subscribe(res => {
-        this.authenticate = res
-      })
-    }
+    this.store.getIsAuthenticate().subscribe(res => {
+      this.authenticate = res
+    })
   }
 
   logout() {

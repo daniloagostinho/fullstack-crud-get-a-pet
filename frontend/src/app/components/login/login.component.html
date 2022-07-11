@@ -1,1 +1,31 @@
-<p>login works!</p>
+<section class="form_container">
+  <h1>Login</h1>
+
+  <div class="message error" *ngIf="flashMessage">
+    {{flashMessage}}
+  </div>
+
+  <div class="message sucess" *ngIf="flashMessageSucess">
+    {{flashMessageSucess}}
+  </div>
+
+  <form>
+
+    <div class="form_control">
+      <label for="name">E-mail</label>
+      <input type="email" name="email" id="email" placeholder="Digite o seu E-mail"
+       multiple="true" [(ngModel)]="email">
+    </div>
+
+    <div class="form_control">
+      <label for="name">Senha</label>
+      <input type="password" name="password" id="password" placeholder="Digite a sua senha"
+       multiple="true" [(ngModel)]="password">
+    </div>
+
+    <button (click)="login($event)">Cadastrar</button>
+
+  </form>
+
+  <p>Não tem conta? <a routerLink="/register">Clique aqui.</a></p>
+</section>
